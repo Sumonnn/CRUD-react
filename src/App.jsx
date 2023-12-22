@@ -7,12 +7,18 @@ import Show from "./components/Show"
 
 function App() {
 
-  const [users, setUsers] = useState([]);
+  const [users, setUsers] = useState(JSON.parse(localStorage.getItem('users')) || []);
 
   return (
     <>
-      <Create setUsers={setUsers} />
-      <Show users={users} setUsers={setUsers} />
+      <Create
+        users={users}
+        setUsers={setUsers}
+      />
+      <Show
+        users={users}
+        setUsers={setUsers}
+      />
     </>
   )
 }

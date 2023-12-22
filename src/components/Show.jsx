@@ -10,11 +10,12 @@ const Show = ({ users, setUsers }) => {
         const copyUser = [...users];
         copyUser.splice(index, 1);
         setUsers(copyUser);
+        localStorage.setItem('users', JSON.stringify(copyUser))
         toast.error('Delete Successfully!!!')
     }
 
     return (
-        <div>
+        <div className='w-full flex-col flex items-center justify-center'>
             {
                 users.map((user, index) => {
                     return <User deleteHandler={deleteHandler} user={user} key={index} index={index} />
