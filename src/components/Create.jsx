@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import toast from 'react-hot-toast';
 import { VscEye, VscEyeClosed } from "react-icons/vsc";
+import { useNavigate } from 'react-router-dom';
 
 const Create = ({ users, setUsers }) => {
 
@@ -9,6 +10,7 @@ const Create = ({ users, setUsers }) => {
         password: '',
     })
 
+    const Navigate = useNavigate();
     const [showPassword, setshowPassword] = useState(false);
 
 
@@ -32,10 +34,11 @@ const Create = ({ users, setUsers }) => {
             username: '',
             password: '',
         })
+        Navigate('/show')
     }
 
     return (
-        <form onSubmit={submitHandler} className="flex flex-col w-full gap-y-4 mt-6 items-center">
+        <form onSubmit={submitHandler} className="flex h-[80vh] flex-col justify-center w-full gap-y-4 mt-6 items-center">
             <h2 className='text-2xl w-1/4 text-zinc-800 font-semibold capitalize'>User Register</h2>
             <label className='w-1/4'>
                 <input
@@ -47,7 +50,7 @@ const Create = ({ users, setUsers }) => {
                     className="bg-slate-200 rounded-[0.75rem] w-full p-[12px] text-zinc-800"
                 />
             </label>
-             {/* password input */}
+            {/* password input */}
             <label className='w-1/4 relative'>
                 <input
                     type={showPassword ? 'text' : 'password'}

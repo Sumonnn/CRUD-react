@@ -15,7 +15,7 @@ const Show = ({ users, setUsers }) => {
     }
 
     return (
-        <div className='w-full flex-col flex items-center justify-center'>
+        <div className='w-full h-[80vh] flex-col flex items-center justify-center'>
             {
                 users.map((user, index) => {
                     return <User deleteHandler={deleteHandler} user={user} key={index} index={index} />
