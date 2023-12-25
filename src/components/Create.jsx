@@ -1,28 +1,13 @@
-import React, { useState } from 'react'
-import toast from 'react-hot-toast';
+import React, { useContext } from 'react'
 import { VscEye, VscEyeClosed } from "react-icons/vsc";
+import { UserContext } from '../context/AppContext';
 import { useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
-const Create = ({ users, setUsers }) => {
+const Create = () => {
 
-    const [formData, setformData] = useState({
-        username: '',
-        password: '',
-    })
-
+    const { setformData, formData, changeHandler, setshowPassword, showPassword, users, setUsers } = useContext(UserContext);
     const Navigate = useNavigate();
-    const [showPassword, setshowPassword] = useState(false);
-
-
-    function changeHandler(event) {
-        const { name, value } = event.target;
-        setformData((prevData) => {
-            return {
-                ...prevData,
-                [name]: value,
-            }
-        })
-    }
 
     function submitHandler(event) {
         event.preventDefault();

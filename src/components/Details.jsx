@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
+
 
 const Details = () => {
 
     const Navigate = useNavigate();
     const { title } = useParams();
-    console.log(title);
+    // console.log(title);
 
     function clickHandler() {
         Navigate(-1);
