@@ -4,6 +4,7 @@ import Home from "./components/Home";
 import Create from './components/Create';
 import Show from './components/Show';
 import Details from './components/Details';
+import Edit from "./components/Edit";
 
 
 
@@ -18,6 +19,7 @@ function App() {
         <Route path="/create" element={<Create />} />
         <Route path="/show" element={<Show />} />
         <Route path="/show/details/:title" element={<Details />} />
+        <Route path="/show/edit/:title" element={<Edit />} />
       </Routes>
     </>
   )
